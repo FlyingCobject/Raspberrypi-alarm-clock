@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote control for raspberry alarm clock</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style_base.css')}}">
+</head>
+<body>
+    {% macro send(signal) %}{{signal}}{% endmacro %} <!-- macro template(not used)-->
+    <div class='header'>
+        <h1 id='nameOfProject'>
+            Remote Control
+        </h1>
+    </div>
+    <div class='main_control'>
+        <div id='control'>
+            <button id='back' onclick="back()"> <!-- skip to the next page or back page-->
+                <span>back</span>
+            </button>
+            <button id='next' onclick="next()">
+                <span>next</span>
+            </button>
+        </div>
+    </div>
+    <div class='sub_control'> <!-- of course it is applied when the page is about alarm-->
+        <div id='clock'>
+            <button id='hour' onclick="Control_clock('hour')">H</button> <!-- select the hour -->
+            <button id='min' onclick="Control_clock('min')">M</button> <!-- select the minute-->
+            <button id='sec' onclick="Control_clock('sec')">S</button>
+        </div>
+        <div id='dial'>
+            <div id='line1'> <!-- input the dial to set alarm-->
+                <button id='1' onclick="oper_dial('1')">1</button>
+                <button id='2' onclick="oper_dial('2')">2</button>
+                <button id='3' onclick="oper_dial('3')">3</button>
+            </div>
+            <div id='line2'>
+                <button id='4' onclick="oper_dial('4')">4</button>
+                <button id='5' onclick="oper_dial('5')">5</button>
+                <button id='6' onclick="oper_dial('6')">6</button>
+            </div>
+            <div id='line3'>
+                <button id='7' onclick="oper_dial('7')">7</button>
+                <button id='8' onclick="oper_dial('8')">8</button>
+                <button id='9' onclick="oper_dial('9')">9</button>
+            </div>
+            <div id='line4'>
+                <button id='0' onclick="oper_dial('0')">0</button>
+                <button id='set' onclick="oper_dial('set')">set</button>
+            </div>
+        </div>
+    </div>
+    <div class='message'> <!-- this section is for indicator of what button user pressed-->
+        <span id='text'></span>
+    </div>
+    <div class='footer'>
+        <button id='on' onclick="turn_on()"> <!-- don't use the exit button often i will erase that-->
+            <span>on</span>
+        </button>
+        <button id='exit' onclick="turn_off()">
+            <span>exit</span>
+        </button>
+    </div>
+
+    <script>
+        function turn_on(){// this function is ajax grammar go to the specific url and indicate what button you pressed
+            fetch('/remote/on').then(response=>
+            response.text()).then(data=>{
+                let result=document.querySelector('.message>#text')
+                if (data=='on'){
+                    result.innerHTML='Alarm App on...'
+                    console.log('turn_on() success:%s',data)
+                }else{
+                    result.innterHTML='(turn_on):not working..'
+                    console.log('turn_on() error:%s',data)}
+            })
+        }
+
+        function turn_off(){//turn off message
+            fetch('/remote/off').then(response=>
+            response.text()).then(data=>{
+                let result=document.querySelector('.message>#text')
+                if (data=='off'){
+                    result.innerHTML='Alarm App off...'
+                    console.log('turn_off() success:%s',data)
+                }else{
+                    result.innterHTML='(turn_off):not working..'
+                    console.log('turn_off() error:%s',data)}
+            })
+        }
+
+        function back(){//back button message
+            fetch('/remote/back').then(response=>
+            response.text()).then(data=>{
+                let result=document.querySelector('.message>#text')
+                if (data=='back'){
+                    result.innerHTML='Go back...'
+                    console.log('back() success:%s',data)
+                }else{
+                    result.innterHTML='(back):not working..'
+                    console.log('back() error:%s',data)}
+            })
+        }
+        function next(){ // next button message
+            fetch('/remote/next').then(response=>
+            response.text()).then(data=>{
+                let result=document.querySelector('.message>#text')
+                if (data=='next'){
+                    result.innerHTML='Go to next...'
+                    console.log('next() success:%s',data)
+                }else{
+                    result.innterHTML='(next):not working..'
+                    console.log('next() error:%s',data)}
+            })
+        }
+
+        function Control_clock(param){ // hour,minute,second button message
+            var x = document.getElementById(param).textContent;
+            url="/remote/clock/"
+            fetch_url=url.concat('',x)
+            console.log(fetch_url)
+
+            fetch(fetch_url).then(response=>
+            response.text()).then(data=>{
+                let result=document.querySelector('.message>#text')
+                if (data==x){
+                    result.innerHTML=x.concat(' ','pressed')
+                    console.log('control_clock() success:%s',data)
+                }else{
+                    result.innterHTML='(control_clock()):not working..'
+                    console.log('control_clock() error:%s',data)}
+            })
+        }
+        function oper_dial(param){ // dial button message
+            var x = document.getElementById(param).textContent;
+            url="/remote/clock/"
+            fetch_url=url.concat('',x)
+            console.log(fetch_url)
+
+            fetch(fetch_url).then(response=>
+            response.text()).then(data=>{
+                let result=document.querySelector('.message>#text')
+                if (data==x){
+                    result.innerHTML=x.concat(' ','pressed')
+                    console.log('oper_dial() success:%s',data)
+                }else{
+                    result.innterHTML='(oper_dial):not working..'
+                    console.log('oper_dial() error:%s',data)}
+            })
+        }
+    </script>
+</body>
+</html>

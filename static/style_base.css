@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@media all and (min-width:500px) /* only for desktop i will try to apply to any resolution i am not familiar with this grammar*/
+{
+    body{
+        background-color: #ffcffe;
+        font-size:10px;
+    }
+}
+
+@media all and (max-width:500px) /* only for iphone 12 monitor in chrome*/
+{
+    body{
+        background-color: #ffcffe;
+        font-size:10px;
+    }
+}
+
+button{
+    background-color:#a4f3ba;
+    width:4em;
+    height:2em;
+    border-radius: 0.7em;
+    border:solid 2px black;
+    font-size:2em;
+    text-align: center;
+    font-weight:bold;
+    font-family:'Nanum Gothic';
+    vertical-align:center;
+}
+/* Main text */
+#nameOfProject{
+    position:fixed;
+    left:50%;
+    transform: translate(-50%);
+    font-family:'Nanum Gothic';
+    text-align:center;
+    vertical-align:center;
+    font-size:3em;
+    font-weight:bold;
+
+}
+/* next back button */
+#control{
+    position:fixed;
+    top:20%;
+    left:50%;
+    transform:translate(-50%);
+    text-align: center;
+}
+
+/* clock button */
+#clock{
+    position:fixed;
+    left:50%;
+    top:35%;
+    transform:translate(-50%);
+    text-align:center;
+}
+
+#clock>button{
+    width:3em;
+    height:2.5em;
+    font-size:2em;
+    text-align: cetner;
+}
+/*dial button*/
+#dial{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%);
+    text-align: center;
+}
+
+#dial button{
+    width:3em;
+    height:2em;
+    font-size:2em;
+    border-radius:0.7em;
+}
+/*message button*/
+.message{
+    position:fixed;
+    right:1%;
+    bottom:15%;
+    font-family:'Nanum Gothic';
+    font-size:3em;
+}
+/* on exit button*/
+.footer>#on{
+    position:fixed;
+    bottom:1em;
+    right:4em;
+    text-align: center;
+
+}
+
+.footer>#exit{
+    position:fixed;
+    bottom:1em;
+    right:0.1em; 
+    text-align: center;
+}
