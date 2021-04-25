@@ -1,6 +1,7 @@
 # Raspberrypi-alarm-clock
 An alarm clock program written in python and javascript that uses official 7inch touchscreen and sensors.
 ## Basic info
+pass
 ## Demo images
 pass
 ## Goals
