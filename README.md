@@ -6,6 +6,7 @@ and revise CSS and html for various types of resolutions. It only support iphone
 would be motivating for waking users up in the morning.
 ## Demo images
 <img src="https://user-images.githubusercontent.com/83174153/116086320-a79b8280-a6da-11eb-86b9-49ceacdf8c1b.jpg" width="50%">
+
 ## References
 pass
 ## Goals
