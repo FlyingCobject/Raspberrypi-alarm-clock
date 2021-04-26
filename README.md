@@ -74,3 +74,7 @@ as a military so for a while i will not be able to confirm)
 And i had been struggling to communicate with flask server and i turned on and off the GUI alarm clock by using multiprocess module in the flask because 
 I am not good at programming about communication so if you have any comments on that let me know
 I checked all but there might have some copyright issue if you let me know by email above i will delete them as soon as possible
+## Notice
+I will keep update this part
+
+you should make ramdisk for weather_broadcast.py because i made the ramdisk folder /mnt/ramdisk
