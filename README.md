@@ -18,16 +18,59 @@ images show that it provide various UI to sense many types of information in the
 
 ## References
 Thanks to the lots of ideas to make this beautiful and good working alarm clock
-  1.Retro Arcade Clock-Arduino https://www.youtube.com/watch?v=e5DrPF1A_Pg
-  2.Raspberry pi:Alarm Clock Project https://www.youtube.com/watch?v=-Or5jmBqsNE&t=44s
-  3.
+* Retro Arcade Clock-Arduino https://www.youtube.com/watch?v=e5DrPF1A_Pg
+* Raspberry pi:Alarm Clock Project https://www.youtube.com/watch?v=-Or5jmBqsNE&t=44s
+* For trial and error Stack Overflow (of course)
 ## Goals
-pass
+The main goal is to offer users a quality sleep and wake up system. So i considered a good 
+design for sleeping and remote-controlling system using web server(Flask module). and there's a 
+back light controlling module. when Alarm rings, the alarm automatically turn the volume to announce 
+today's news and weathers and calming sound.
+
+Of course this is a form of IOT project so i will update to control another sensors or devices
+and dark-mode in GUI. Any ideas for update are welcome.
 ## Hardware
-pass
+* Raspberry pi 4B(another board is okay if 7inch touch screen supports)
+* SD card(for installing OS)
+* Keyboard,monitor(initial setting)
+* Raspberry pi heatsink
+* breadboard,Jumper line
+* Speaker(3.5mm or bluetooth)
+* 5V 1 channel relay(input voltage is 12V because I used 12V for led)
+* Male and Female 12V DC power jack Adapter Connector(link:https://www.amazon.com/gp/product/B01ER6QWAY/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+* LED Strip Lights that uses DC Adapter(link:https://www.amazon.com/gp/product/B07RFFJ7YL/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+* Official Raspberrypi 7inch touch scrreen(make sure that is supports your board)
+* 7inch touch screen case(neccesary)
+* 220V->110V Transformers(I used 110V led strip and here is korea so i used this)
+* Adafruit dht11 sensor
+* Adafruit BMP180 sensor
 ## Dependencies
-pass
+* pip3 --version (make sure that python3 is pre-installed)
+* sudo pip3 install PIL
+* rpi-backlight library(link:https://github.com/linusg/rpi-backlight)
+* sudo pip3 install tkinter
+* adafruit_dht library (link:https://github.com/adafruit/DHT-sensor-library)
+* adafruit_BMP180 library (link:https://github.com/adafruit/Adafruit_Python_BMP)
+* sudo pip3 install gtts
+* sudo pip3 install bs4
+* sudo pip3 install requests
+* (optional) sudo pip3 install flask (only if you want remote control)
 ## What about Raspberry pi alarm clock?
-pass
+Raspberry pi touch alarm clock offers several functions
+### GUI
+1. digital clock
+2. analog clock
+3. alarm setting:hour,minute,second,dayofweek
+4. check alarm list( thread using so program can control multiple of alarm)
+5. temperature,humidity,pressure check
+### background
+1. Alarm thread
+2. (optional)flask web server ( go into the raspberry pi IP address and you can control by remote controlling)
+3. alarm wake up system(LED control,web crawling and gtts sound all of thesese is formed of multiprocess)
+4. dht_sensor checking (multiprocess)
 ## ETC
-pass
+I wrote comments shortly in the program and if you have trouble using or understanding the code, email me at sehyunisworking0708@gmail.com(of course i will serve
+as a military so for a while i will not be able to confirm)
+And i had been struggling to communicate with flask server and i turned on and off the GUI alarm clock by using multiprocess module in the flask because 
+I am not good at programming about communication so if you have any comments on that let me know
+I checked all but there might have some copyright issue if you let me know by email above i will delete them as soon as possible
