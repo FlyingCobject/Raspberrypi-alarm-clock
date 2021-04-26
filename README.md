@@ -14,9 +14,13 @@ would be motivating for waking users up in the morning.
 <img src="https://user-images.githubusercontent.com/83174153/116087679-1200f280-a6dc-11eb-87e6-5d6b2056dd6f.jpg" width="45%">
 <img src="https://user-images.githubusercontent.com/83174153/116087720-1b8a5a80-a6dc-11eb-89c1-fd3dc8609748.jpg" width="45%">
 </p>
+images show that it provide various UI to sense many types of information in the house and it light up the neopixel when alarm rings and make an announcement of today's weather and recent news and turn on the music.
 
 ## References
-pass
+Thanks to the lots of ideas to make this beautiful and good working alarm clock
+  1.Retro Arcade Clock-Arduino https://www.youtube.com/watch?v=e5DrPF1A_Pg
+  2.Raspberry pi:Alarm Clock Project https://www.youtube.com/watch?v=-Or5jmBqsNE&t=44s
+  3.
 ## Goals
 pass
 ## Hardware
