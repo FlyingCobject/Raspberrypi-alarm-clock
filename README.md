@@ -5,7 +5,15 @@ I use this program for setting alarm and control the near IOT object. This progr
 and revise CSS and html for various types of resolutions. It only support iphone 12). And i am still thiking what design
 would be motivating for waking users up in the morning.
 ## Demo images
-<img src="https://user-images.githubusercontent.com/83174153/116086320-a79b8280-a6da-11eb-86b9-49ceacdf8c1b.jpg" width="50%">
+<img src="https://user-images.githubusercontent.com/83174153/116087746-247b2c00-a6dc-11eb-8267-775c8b33302c.jpg" width="90%" height="90%">
+<p>
+<img src="https://user-images.githubusercontent.com/83174153/116086320-a79b8280-a6da-11eb-86b9-49ceacdf8c1b.jpg" width="45%">
+<img src="https://user-images.githubusercontent.com/83174153/116087638-06153080-a6dc-11eb-805f-36bcdd3b4f0c.jpg" width="45%">
+</p>
+<p>
+<img src="https://user-images.githubusercontent.com/83174153/116087679-1200f280-a6dc-11eb-87e6-5d6b2056dd6f.jpg" width="45%">
+<img src="https://user-images.githubusercontent.com/83174153/116087720-1b8a5a80-a6dc-11eb-89c1-fd3dc8609748.jpg" width="45%">
+</p>
 
 ## References
 pass
